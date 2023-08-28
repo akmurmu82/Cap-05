@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        #inputBox{
+            /* border: 1px solid; */
+            display: flex;
+            height: 50px;
+            width: 500px;
+            margin:auto;
+            gap: 10px;
+            padding: 10px;
+        }
+        #inputBox > input{
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+        }
+        #operation{
+            /* border: 1px solid; */
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #operation > button{
+            padding: 10px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputBox">
+        <input id="firstNum" type="number" placeholder="Enter First Number">
+        <input id="secondNum" type="number" placeholder="Enter Second Number">
+    </div>
+
+    <div id="operation">
+        <button id="add" onclick="operation('+')">Add</button>
+        <button id="substract" onclick="operation('-')">Substract</button>
+        <button id="multiply" onclick="operation('*')">Multiply</button>
+        <button id="divide" onclick="operation('/')">Divide</button>
+    </div>
+</body>
+</html>
+
+<script>
+    function operation(sign) {
+        let firstNum = document.getElementById('firstNum').value;
+        let secondNum = document.getElementById('secondNum').value;
+        firstNum = Number(firstNum)
+        secondNum = Number(secondNum)
+        switch(sign) {
+            case '+':
+                alert(`${firstNum + secondNum}`)
+                break;
+            case '-':
+                alert(`${firstNum - secondNum}`)
+                break;
+            case '*':
+                alert(`${Math.round(firstNum * secondNum)}`)
+                break;
+            case '/':
+                alert(`${firstNum / secondNum}`)
+                break;
+        }
+    }
+</script>
