@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="myInput">
+        <button id="btn">Submit</button>
+        <p id="display"></p>
+    </div>
+</body>
+</html>
+<script>
+    let btn = document.getElementById('btn');
+    let pTag = document.getElementById('display');
+    let myInput = document.getElementById('myInput');
+
+    btn.addEventListener('click',()=> {
+        pTag.innerHTML = `Entered value: ${myInput.value}`;
+    })
+
+</script>
