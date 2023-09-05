@@ -10,7 +10,7 @@
             padding: 0;
         }
         #container{
-            width: 60%;
+            width: 100%;
             margin: auto;
         }
         #minMax{
@@ -110,13 +110,13 @@
     
     enterBtn.addEventListener('click', ()=> {
         console.log('pressed')
-        if(currScore>max) {
+        if(+currScore>+max) {
             document.getElementById('max').value = currScore;
             max = currScore;
             console.log(typeof document.getElementById('max').value, typeof currScore)
         }
         
-        if(currScore<min) {
+        if(+currScore<+min) {
             document.getElementById('min').value = currScore;
             min = currScore;
             console.log(typeof document.getElementById('max').value, typeof currScore)
