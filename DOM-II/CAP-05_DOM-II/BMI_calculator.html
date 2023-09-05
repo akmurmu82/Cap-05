@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+        }
+        label{
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        input{
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        button{
+            padding: 10px;
+            width: 200px;
+            margin: auto;
+            margin-top: 10px;
+            background-color: #42b72a;
+            font-weight: bold;
+            border: none;
+            border-radius:5px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        button:hover{
+            background-color: #277e15;
+        }
+        #calculateAgain{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <div>
+
+        <label for="height">Enter your height</label>
+        <input type="number" placeholder="Enter your height" id="height">
+
+        <label for="weight">Enter your weight</label>
+        <input type="number" placeholder="Enter your weight" id="weight">
+
+        <button id="calculateBtn">Calculate BMI</button>
+        <h1 id="display"></h1>
+
+    </div>
+</body>
+</html>
+<script>
+    isPressed = false;
+    function CalculateBMI() {
+        isPressed = !isPressed;
+        if(isPressed) {
+            document.getElementById('calculateBtn').innerText = 'Calculate Again';
+
+            let height = document.querySelector('#height').value;
+            let weight = document.querySelector('#weight').value;
+
+            let bmi = weight/((height**2)/10000);
+            console.log(typeof height, typeof weight)
+            bmi = Math.round(bmi)
+            let state = '';
+
+            bmi<=18.4 ? state='under-weight':bmi>=18.5 && bmi<24.9 ? state='normal weight': bmi>=25 && bmi<29/9 ? state='over-weight': bmi>=30 ? state='obese':null;
+
+            document.getElementById('display').innerText = `Your BMI is ${bmi} which means you're ${state}`
+        } else {
+            document.getElementById('calculateBtn').innerText = 'Calculate BMI';
+            document.getElementById('height').value = ''
+            document.getElementById('weight').value = ''
+            document.getElementById('display').innerText = ''
+        }
+        
+
+        
+
+    }
+
+    document.getElementById('calculateBtn').addEventListener('click', CalculateBMI)
+    
+</script>

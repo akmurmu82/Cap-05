@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator{
+            border: 1px solid;
+            width: 50%;
+            margin: auto;
+            height: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #display{
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 5px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        #keypad{
+            border: 1px solid;
+            padding: 10px;
+            display: grid;
+            height: 200px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button{
+            border: 1px solid;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display"></div>
+        <div id="keypad">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operationBtn">+</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operationBtn">-</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operationBtn">*</button>
+            <button class="number">.</button>
+            <button class="number">0</button>
+            <button class="number" id="eval">=</button>
+            <button class="operationBtn">/</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let display = document.querySelector('#display');
+    let keypad = document.querySelectorAll('#keypad > button');
+    let operationBtns = document.querySelectorAll('.operationBtn');
+
+    let bag = '';
+    for(let i=0; i<keypad.length; i++) {
+        if(i !== 14) {
+            keypad[i].addEventListener('click', (event)=> {
+                bag += event.target.innerText;
+                display.innerHTML = `${bag}`
+                console.log(event.target.innerText, 'bag', bag)
+            })
+        }
+    }
+    
+    window.addEventListener('keydown', (event)=> {
+        // console.log(event.key);
+        if(event.key == '=' || event.key == 'Enter') {
+            bag = eval(bag);
+            console.log(bag)
+            display.innerHTML = bag;
+        } else if(event.key == 'Backspace') {
+            bag = String(bag)
+            bag = bag.substring(0, bag.length-1)
+            display.innerHTML = `${bag}`
+            console.log(bag)
+        } else if(typeof event.key == 'number') {
+            bag += event.key;
+            display.innerHTML = bag;
+        }
+    })
+
+    document.getElementById('eval').addEventListener('click', ()=> {
+        display.innerHTML = `${eval(bag)}`
+        bag = eval(bag);
+    })
+
+
+
+</script>
