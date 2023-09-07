@@ -21,15 +21,15 @@ function createRow(name, empId, dep, exp, email, mob, role, del) {
     let paramArr = [name, empId, dep, exp, email, mob, role, del];
     let tr = document.createElement('tr');
     
-    tr.addEventListener('click', (event)=> {
-        event.target.parentNode.remove();
-    })
-    
     for(let param of paramArr) {
-        if(param == role) {
-        }
         let td = document.createElement('td');
         td.innerText = param;
+        if(param == del) {
+                td.addEventListener('click', (event)=> {
+                event.target.parentNode.remove();
+            })
+            td.style.cursor = 'default'
+        }
         tr.append(td);
     }
     tbody.append(tr);
