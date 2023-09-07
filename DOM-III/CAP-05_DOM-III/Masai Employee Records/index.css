@@ -32,18 +32,6 @@ select {
     margin-bottom: 10px;
 }
 
-table {
-    border: 1px solid;
-    max-height: 400px; /* Set a maximum height for the table */
-    overflow-y: auto; /* Enable vertical scrolling if needed */
-}
-
-tr {
-    max-height: 50px; /* Set a maximum height for individual rows */
-    height: 50px;
-    overflow: hidden; /* Hide overflow content in rows */
-}
-
 input[type='submit'] {
     background-color: #28a4e8;
     border-radius: 10px;
@@ -56,17 +44,26 @@ input[type='submit']:hover {
 }
 
 label {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-table,
-th,
-td {
-    border: 1px solid;
-    border-collapse: collapse;
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
 }
 
-tr:nth-child(even),
-th {
-    background-color: #888;
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
 }
+
+  tr:nth-child(even),
+  th {
+      background-color: #888;
+  }
