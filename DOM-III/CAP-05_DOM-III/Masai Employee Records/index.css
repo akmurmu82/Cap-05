@@ -1,0 +1,8 @@
+table, th, td{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even), th {
+    background-color: #888;
+}
