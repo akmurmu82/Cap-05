@@ -29,6 +29,8 @@ function createRow(name, empId, dep, exp, email, mob, role, del) {
                 event.target.parentNode.remove();
             })
             td.style.cursor = 'default'
+            td.style.backgroundColor = 'red'
+            td.style.color = 'black'
         }
         tr.append(td);
     }

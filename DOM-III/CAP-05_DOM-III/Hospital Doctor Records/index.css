@@ -23,9 +23,10 @@ table th {
 
 tr:nth-child(even),
 th {
-    background-color: #888;
-}
-
+    background-color: #5e00b8;
+    color: #fff;
+  }
+  
 h1{
   text-align: center;
   font-family: sans-serif;
@@ -55,14 +56,15 @@ select {
 }
 
 input[type='submit'] {
-  background-color: #28a4e8;
+  background-color: #5e00b8 ;
   border-radius: 10px;
   border: none;
+  color: #fff;
   font-size: 20px;
 }
 
 input[type='submit']:hover {
-  background: #1f91cf;
+  background: #50019b;
 }
 
 label {
