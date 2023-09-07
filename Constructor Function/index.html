@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function bankAccount(accNum, name, type, balance) {
+        this.name = name;
+        this.accNum = accNum;
+        this.type = type;
+        this.balance = 0;
+
+    }
+
+    bankAccount.prototype.deposite = function(amt) {
+        this.balance += amt;
+    }
+
+    bankAccount.prototype.withdraw = function(amt) {
+        this.balance -= amt;
+    }
+
+    bankAccount.prototype.checkBalance = function() {
+        console.log(this.balance);
+    }
+
+    bankAccount.prototype.isActive = function() {
+        return this.isActive;
+    }
+
+
+let acc1 = new bankAccount(1, 'User1', 'Saving', 1000)
+let acc2 = new bankAccount(1, 'User2', 'Saving', 2000)
+
+
+console.log(acc1.type)
+console.log(acc1.deposite(1000))
+console.log(acc1.checkBalance())
+
+</script>
