@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Simulation Game</h1>
+  </body>
+</html>
+<script>
+  function VahicleConstructorFun(brand, model, speed, fuelType) {
+    this.brand = brand;
+    this.model = model;
+    this.speed = speed;
+    this.fuelType = fuelType;
+  }
+
+  VahicleConstructorFun.prototype.accelerate = function (increase) {
+    this.speed += increase;
+  };
+  VahicleConstructorFun.prototype.break = function (decrease) {
+    this.speed -= decrease;
+  };
+  VahicleConstructorFun.prototype.refuel = function () {
+    console.log("vehicle is refueling");
+  };
+
+    // let car = new VahicleConstructorFun("brand1", "model1", 220, "Disel");
+  //   car.accelerate(20)
+  //   car.break(40)
+  //   console.log(car);
+
+  function CarConstructorFun(noOfWheels, brand, model, speed, fuelType) {
+    this.noOfWheels = noOfWheels;
+    VahicleConstructorFun.call(this, brand, model, speed, fuelType);
+  }
+   CarConstructorFun.prototype = Object.create(VahicleConstructorFun.prototype)
+  
+  let car = new CarConstructorFun(4, "brand1", "model1", 220, "Disel");
+  // let car2 = new CarConstructorFun(3);
+  
+  CarConstructorFun.prototype.honk = function () {
+    console.log(`${this.model}honking...`);
+  };
+
+  console.log(car); // returns the object made by CarConstructorFun()
+
+  // console.log(car.__proto__); //prototype
+  // console.log(car.__proto__.__proto__); //global Object prototype
+  
+  // sayHi()
+
+  // console.log(car.constructor); // returns the construction function of the object car
+  // console.log(CarConstructorFun.prototype);
+  // console.log(car.constructor.prototype);
+  // console.log(CarConstructorFun.prototype == car.constructor.prototype);
+
+  // console.log(car.__proto__.__proto__); // returns the built-in Object.prototype
+  // console.log(car.__proto__.__proto__.__proto__); // returns null
+
+  function DemoConstFun(prop1, prop2) {
+    this.prop1 = prop1;
+    this.prop2 = prop2;
+  }
+  
+  DemoConstFun.prototype.prototypeProp1 = "prototypeVal1";
+  DemoConstFun.prototype.prototypeProp2 = function() {console.log('prototypeProp2');};
+
+  // console.log(DemoConstFun.prototype);
+
+  let demo1 = new DemoConstFun("val1", "val2");
+
+  console.log(demo1);
+  console.log(demo1.prototypeProp1);
+  demo1.prototypeProp2();
+  
+</script>

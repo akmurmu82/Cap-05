@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototypical Inheritance</title>
+  </head>
+  <body>
+    <h1>Prototypical Inheritance</h1>
+  </body>
+</html>
+<script>
+  // Factory Function
+  function factoryFun(param1, param2) {
+    let obj = {};
+
+    obj.prop1 = param1;
+    obj.prop2 = param2;
+
+    return obj;
+  }
+
+  /*
+    '' and  ""
+    `` template string
+    */
+
+  let newObj = factoryFun("val1", "val2");
+  // console.log(newObj);
+
+  // Constructor Function - Pascal Case the 'this' and 'new' keywork
+  function ConstFun(param1, param2) {
+    // assuming the the obj has created
+    // 'this' reff to the object that is gonna be created
+    this.prop1 = param1;
+    this.prop2 = param2;
+    // assume the obj is returned
+  }
+
+//   Every prop and method we declare within the prototype will be available to all the objects created using that cunstructor function.
+// It is used as a tool to make prototype chains
+
+ConstFun.prototype.protoMethod = function() {console.log('method1 from prototype')}
+
+let child = {
+    name: 'Child1'
+  }
+
+//   Communicate:
+// child is made using Global Object constFun
+// child.__proto__ returns Global Object constFun prototype property
+console.log(child.__proto__ == Object.prototype)
+
+// 1. child's proto is pointing to Object.prototype
+// 2. Object is a prototype of child.
+
+  let str = 'amit'
+  let myArr = [1 ,2, 3];
+  console.log(myArr.__proto__) // Array constructor.prototype
+
+  console.log(myArr.__proto__.__proto__) // Object constructor.prototype
+  
+  console.log(myArr.__proto__.__proto__.__proto__) // Null
+
+console.log('============')
+console.log(ConstFun.prototype); // return an object
+console.log(child.__proto__) // Global Object Prototype object
+  console.log('============')
+
+  let contObj = new ConstFun("val1", "val2"); // return an object
+//   console.log(contObj.__proto__) // prototype
+
+//   console.log(ConstFun.prototype) // prototype
+
+//   contObj.protoMethod()
+
+
+
+//   function ConstFun2(param1) {
+//     this.param1 = param1
+//   }
+//   let contObj2 = new ConstFun2('val1');
+
+
+
+  // 'this' and 'new'
+
+  // Automobile - Bikes, cars, etc..
+  // TwoWheelrs
+  // Cycles
+  // Bikes
+  //  FoursWheelrs
+  // Cars
+  // Van
+
+  // let TwoWheelrs  = {wheels: 2, seat: 1}
+  // Model (prototype)
+
+  // let bike = {} // this object has a link to the model Twowheelr
+  // bike.wheels --> 2
+  // cycles.wheels --> 2
+  // let cycles = {}
+
+  //   function TwoWheeler(noOfWheels, noOfSeat, newProp) {
+  //     this.noOfWheels = noOfWheels;
+  //     this.noOfSeat = noOfSeat;
+  //     this.newProp = newProp;
+  //   }
+
+  //   let TwoWheeler1 = new TwoWheeler(2, 1);
+  //   console.log(TwoWheeler1);
+
+  //   function Bike(color) {
+  //     this.color = color; //local
+  //     TwoWheeler.call(this, 2, 1, "NewVal");
+  //     // call TwoWheeler and set the child as the 'this'
+  //   }
+  //   // Bike.prototype = Object.create(TwoWheeler.prototype); //create the linke
+
+  //   let bike1 = new Bike("Grey");
+  //   console.log(bike1); // 2
+  //   console.log(bike1.newProp); // 2
+
+  let parent = {
+    method1: function () {
+      console.log("method1 from parent");
+    },
+    method2: function () {
+      console.log("method2 from parent");
+    },
+  };
+
+ 
+
+
+  let child2 = new Object();
+//   console.log(child2.__proto__);
+
+//   Every object in JS has a hidden property __proto__
+// it will point to the constFun by using which the object was made
+
+//   Every Constructor function in JS has a hidden property prototype;
+// The nature of this prototype is object
+
+
+//  Global Object Constructor function
+
+// prototype:
+
+
+
+// console.log(child.__proto__) 
+
+
+</script>
