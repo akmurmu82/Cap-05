@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <h1>Promise</h1>
+  </body>
+</html>
+<script>
+  let isNetworkRequestSuccesful = true;
+
+  var myPromise = new Promise((resolve, reject) => {
+    if (isNetworkRequestSuccesful) {
+      resolve("Resolved Data");
+      resolve("Resolved ");
+    } else {
+      reject("Rejected Error");
+    }
+  });
+
+  myPromise
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+</script>
