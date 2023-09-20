@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Online book store</title>
   </head>
   <body></body>
 </html>
@@ -14,14 +14,15 @@
     this.nationality = nationality;
   }
 
-  let author1 = new Author('Amit', 'unknown', 'Amarican')
+  let author1 = new Author('Amit', '16 sept', 'Amarican')
   console.log(author1);
 
-  function Book(title, author, genre, price, authorName, authorBirthYear, authorNationality) {
+  function Book(authorName, authorBirthYear, authorNationality, title, genre, price, author) {
     this.title = title;
     // this.author = new Author(authorName, authorBirthYear, authorNationality);
     // this.author = Object.create(new Author(authorName, authorBirthYear, authorNationality))
-    this.author = Author.call('JK Rowlings', 'unknown', 'Amarican')
+    this.author = {name: 'Amit'}
+    // this.author = Author.call(this, authorName, authorBirthYear, authorNationality)
     this.genre = genre;
     this.price = price;
     this.getBookInfo = function() {
@@ -29,7 +30,7 @@
     }
   }
 
-  let herryPotter = new Book('Harry Potter', 'Fiction', 399, 'JK Rowlings', 'unknown', 'Amarican');
+  let herryPotter = new Book('Amit', '16 sept', 'Amarican', 'Harry Potter', 'Fiction', 399);
   console.log(herryPotter)
 
 

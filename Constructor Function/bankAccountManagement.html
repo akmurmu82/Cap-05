@@ -21,7 +21,11 @@
   };
 
   BankAccount.prototype.withdraw = function (amt) {
-    this.balance -= amt;
+    if(this.balance>=amt) {
+      this.balance -= amt;
+    } else {
+      console.log('Not enough balance')
+    }
   };
 
   BankAccount.prototype.checkBalance = function () {

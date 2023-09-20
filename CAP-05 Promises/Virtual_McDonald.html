@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIRTUAL MCDONALD'S</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .foodContainer {
+        /* border: 1px solid; */
+        width: 80%;
+        padding: 10px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        /* display: none; */
+      }
+      .card {
+        /* border: 1px solid; */
+        padding: 10px;
+        text-align: center;
+      }
+      .card img {
+        /* border: 1px solid; */
+        width: 100%;
+      }
+      .card button {
+        padding: 10px;
+        margin-top: 10px;
+        font-weight: bold;
+        border: none;
+        background-color: #ffbc0d;
+      }
+
+      /* Order Container */
+      .orderContainer {
+        border: 1px solid;
+        width: 350px;
+        padding: 10px;
+        margin: auto;
+        margin-top: 100px;
+
+        animation: zoomOut 0.3s;
+        display: none;
+      }
+      .orderContainer img {
+        width: 100%;
+        /* border: 1px solid; */
+      }
+      .orderContainer p {
+        font-size: 20px;
+        color: teal;
+      }
+      .orderContainer P:first-child {
+        font-size: 13px;
+        color: #000;
+        float: right;
+      }
+
+      @keyframes zoomOut {
+        from {
+          scale: 0;
+        }
+        to {
+          scale: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>VIRTUAL MCDONALD'S</h1>
+    <div class="foodContainer">
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202211_0085_BaconEggCheeseBiscuit_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Bacon Egg Cheese Biscuit</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202004_0046_EggMcMuffin_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Egg McMuffin</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_202002_0078_SausageMcMuffin_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage McMuffin</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0083_SausageEggMcMuffin_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage Egg McMuffin</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0062_SausageBiscuit_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage Biscuit</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_0092_SausageEggBiscuit_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage Egg Biscuit</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201908_9839_BEC_McGriddle_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>BEC McGriddle</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201911_6110_SausageMcGriddle_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage McGriddle</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+      <div class="card">
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_9841_SausageEggCheeseMcGriddle_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage McGriddle</p>
+        <button class="orderBtn">ORDER</button>
+      </div>
+    </div>
+
+    <div class="orderContainer">
+      <div class="orderFoodCard">
+        <p>OrderID: JSUC546DKI55CKKD</p>
+        <img
+          src="https://s7d1.scene7.com/is/image/mcdonalds/DC_201907_9841_SausageEggCheeseMcGriddle_832x472:1-4-product-tile-desktop"
+          alt=""
+        />
+        <p>Sausage Egg Cheese McGriddle</p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let foodContainer = document.querySelector(".foodContainer");
+  let orderContainer = document.querySelector(".orderContainer");
+  let orderBtns = document.getElementsByClassName("orderBtn");
+
+  function orderFood(imgSrc, itemName) {
+    console.log(imgSrc, itemName);
+
+    foodContainer.style.display = "none";
+    orderContainer.style.display = "block";
+
+    // creating the food card
+    let orderFoodCard = document.createElement("div");
+    // setting the food card attributes and innerHTML
+    orderFoodCard.setAttribute("class", "orderFoodCard");
+    orderContainer.innerHTML = "";
+    orderFoodCard.innerHTML = `
+        <p>OrderID: JSUC546DKI55CKKD</p>
+            <img
+            src=${imgSrc}
+            alt=""
+            />
+        <p>${itemName}</p>
+    `;
+    orderContainer.append(orderFoodCard);
+  }
+
+  function promiseFunc(imgSrc, itemName) {
+    let myPromise = new Promise((resolve, reject) => {
+      let randomDelay = Math.floor(Math.random() * 5);
+      console.log(randomDelay);
+
+      setTimeout(() => {
+        resolve(orderFood);
+        // reject("");
+      }, randomDelay * 1000);
+    });
+
+    myPromise.then((orderFood) => {
+      // orderFood();
+      // console.log("function name is:", orderFood);
+      orderFood(imgSrc, itemName)
+    });
+  }
+
+  for (let i = 0; i < orderBtns.length; i++) {
+    orderBtns[i].addEventListener("click", (event) => {
+      let imgSrc = event.target.parentNode.children[0].src;
+      let itemName = event.target.parentNode.children[1].innerHTML;
+
+      promiseFunc(imgSrc, itemName)
+    });
+  }
+</script>
