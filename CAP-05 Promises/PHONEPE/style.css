@@ -19,15 +19,15 @@ form input{
     width: 60%;
     margin: auto;
 }
-#succesfull{
+#successfulScreen{
     display: none;
     border: 1px solid;
 }
-#failed{
+#failedScreen{
     display: none;
     border: 1px solid;
 }
-#pending{
+#pendingScreen{
     display: none;
     border: 1px solid;
 }
