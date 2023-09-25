@@ -30,7 +30,7 @@ function submit() {
 
     let myPromise = new Promise((res, rej) => {
         setTimeout(() => {
-            ranNum % 2 == 0 ? res(showSuccess) : rej(showFailure); // resolving/rejecting a/c wherether the randNum is even/odd
+            ranNum > 3 ? res(showSuccess) : rej(showFailure); // resolving/rejecting a/c wherether the randNum is even/odd
         }, 2000);
     })
 
