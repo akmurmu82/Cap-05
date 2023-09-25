@@ -10,15 +10,29 @@
   </body>
 </html>
 <script>
+
+
+
   let newPromise = new Promise((resolve, reject) => {
     console.log('started');
+
     setTimeout(() => {
       resolve("Resolved");
       reject("Rejected");
-    }, 2000);
+    }, 1000);
+
   });
 
-  newPromise.then((data) => {
-    console.log(data);
-  });
+  newPromise
+  .then((data)=> {
+    console.log(data)
+  })
+  .catch((error)=> {
+    console.log(error)
+  })
+  .finally((message)=> {
+    console.log(message);
+  })
+
 </script>
+
