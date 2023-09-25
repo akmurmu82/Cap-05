@@ -9,7 +9,7 @@
 </html>
 <script>
   // function to convert a character to lower case
-  let convertToLowerCase = (char) => {
+  let convertCharToLowerCase = (char) => {
     if (char == char.toLowerCase()) {
       return char;
     } else {
@@ -18,5 +18,31 @@
     }
   };
 
-  console.log(convertToLowerCase("S"));
+  // calling converToLowerCase()
+  console.log(convertCharToLowerCase("S"));
+  
+  // Using converToLowerCase to convert a word to lower case
+  function convertWordToLowerCase(word) {
+    let modifiedWord = "";
+    for (let i = 0; i < word.length; i++) {
+      modifiedWord += convertCharToLowerCase(word[i]);
+    }
+    return modifiedWord;
+  }
+
+  // calling converWordToLowerCase()
+  console.log(convertWordToLowerCase('AMIT'));
+
+  // Using converWordToLowerCase to convert an array of words to lower case
+  function convertArrayToLowerCase(arr) {
+    let modifiedArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      modifiedArr.push(convertWordToLowerCase(arr[i]));
+    }
+    return modifiedArr;
+  }
+
+  // calling converArrayToLowerCase()
+  console.log(convertArrayToLowerCase(['AMIT', 'S', 'AMIT']));
+
 </script>
