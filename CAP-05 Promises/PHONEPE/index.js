@@ -22,8 +22,7 @@ function showFailure() {
     failureScreen.style.display = 'block'
 }
 
-submitBtn.addEventListener('click', (e) => {
-    e.preventDefault()
+function submit() {
     console.log(inputAmount.value);
     // toggling to the pending screen
     pendingScreen.style.display = 'block'
@@ -36,11 +35,16 @@ submitBtn.addEventListener('click', (e) => {
     })
 
     myPromise
-        .then((showSuccess)=> {
+        .then((showSuccess) => {
             showSuccess()
         })
-        .catch((showFailure)=>{
+        .catch((showFailure) => {
             showFailure()
         })
+}
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    submit()
 })
 
