@@ -1,0 +1,78 @@
+*{
+    margin:0;
+}
+nav{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+form input{
+    padding: 10px;
+}
+
+/* Temp container */
+#container{
+    border: 1px solid;
+    /* display:flex; */
+    width: 50vw;
+    background-color: #28a4e8;
+    color: #fff;
+    margin: auto;
+    padding: 20px;
+}
+#cityName{
+    border: 1px solid;
+    font-size: 30px;
+}
+#temp-container{
+    border: 1px solid;
+    font-size: 30px;
+    margin: auto;
+    width: 50%;
+}
+#temp-container >  span{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    border: 1px solid;
+}
+#temp-container #temp{
+    font-size: 100px;
+    margin: 20px auto;
+}
+#temp-container p{
+    margin-top: 10px;
+    font-size: 50px;
+}
+#temp-container >  span:nth-child(2){
+    border: 1px solid blue;
+    font-size: 30px;
+}
+
+/* More Information */
+#moreInfo{
+    border: 1px solid;
+    background-color: #fff;
+    display: grid;
+    color: #000;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+}
+#moreInfo > div{
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+}
+#moreInfo i {
+    font-size: 25px;
+    color: #5e00b8;
+}
+#moreInfo > div :nth-child(3){
+    color: #666;
+    font-size: 15px;
+}
+#moreInfo > div :nth-child(2){
+    font-size: 20px;
+}

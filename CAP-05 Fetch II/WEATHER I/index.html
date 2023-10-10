@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather I</title>
+    <script
+      src="https://kit.fontawesome.com/4066364e3e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <span id="logo">WEATHER I</span>
+      <form>
+        <input id="searchBar" placeholder="Search for a city..." />
+        <input type="submit" id="submitBtn" value="Submit" />
+      </form>
+      <div id="setting"><i class="fa-solid fa-bars"></i></div>
+    </nav>
+
+    <div id="container">
+      <span id="cityName">Delhi</span>
+      <div id="temp-container">
+        <span id="temp">25 <p>°C</p></span>
+        <span>Cloudy 24 ~ 30°C</span>
+      </div>
+      
+      <div id="moreInfo">
+
+        <div id="infoCard">
+          <i class="fa-solid fa-temperature-three-quarters"></i>
+          <p>34°C</p>
+          <p>Feels like</p>
+        </div>
+
+        <div id="infoCard">
+          <i class="fa-solid fa-fan"></i>
+          <p>34°C</p>
+          <p>Wind</p>
+        </div>
+
+        <div id="infoCard">
+          <i class="fa-solid fa-droplet"></i>
+          <p>84%</p>
+          <p>Humidity</p>
+        </div>
+
+        <div id="infoCard">
+          <i class="fa-solid fa-eye"></i>
+          <p>1005m</p>
+          <p>Visibility</p>
+        </div>
+
+        <div id="infoCard">
+          <i class="fa-solid fa-gauge-high"></i>
+          <p>34°C</p>
+          <p>Air Pressure</p>
+        </div>
+
+        <div id="infoCard">
+          <i class="fa-solid fa-temperature-three-quarters"></i>
+          <p>34°C</p>
+          <p>Feels like</p>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
+<script src="index.js"></script>

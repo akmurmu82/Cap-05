@@ -3,27 +3,170 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ES6</title>
+    <title>ES6 Topic Explaination</title>
   </head>
   <body></body>
 </html>
 <script>
-  fetch("https://fakestoreapi.com/products")
-    .then((res) => res.json())
-    .then((data) => console.log('.then', data))
-    .catch((err) => console.log(err));
+  console.log("ES6 Explained");
+  // Let and Const keyword and their use cases
+  /*
+ - Block scoped
+ - reassignable but not re-declarable
+*/
 
-  async function fetchData() {
-    try {
-      console.log("started");
-      let res = await fetch(`https://fakestoreapi.com/products`);
-      let data = await res.json();
-      console.log('async', data);
-    } catch (error) {
-      console.log(error);
-    }
-  }Selection
-  
 
-  fetchData()
+
+
+// Arrow function, how it is different from normal function?
+/*
+ - syntax (anonymous func to arrow func)
+ - can not use to make constructor
+ - better to use in Array HOF, to handle Promises
+*/
+
+// function fun() {
+//   console.log('simple function')
+// }
+// fun()
+
+// let arrFun = ()=> {
+//   console.log('anonymous func');
+// }
+// arrFun()
+
+// function const1(name, age) {
+//   this.name = name
+//   this.age = age
+// }
+
+// let amit = new const1('Amit', 24);
+// console.log(amit)
+
+// let arr = [1, 2, 3, 4, 5];
+
+// let newArr = arr.map((item) => {
+//   return item * 2;
+// });
+
+
+// Template litrals
+/*
+ - multi-line strings
+ - string interpolation
+*/
+
+// string
+// ""
+// ''
+// let str2 = `line 1
+
+// line2`;
+
+// let name = 'Amit';
+// let str = `my name is ${name}`
+// console.log(str2);
+
+
+// Default parameters
+/*
+ - previous method
+ - now
+*/
+
+// function foo(p1='Sumit', p2='Amit') {
+//   console.log(p1, p2);
+// }
+// foo('arg1');  // 
+
+// For of loop
+/*
+ - iterate over the values of iterable like array, strings, map, set
+*/
+// let arr = ['amit', 'sumit', 'Akash']
+// let obj = {name:'Amit', age: 24}
+
+// for(let val of obj) {
+//   console.log(val);
+// }
+
+// Object and Array de-structuring
+/*
+ - unpack values from arrays
+ - properties from objects, ({name, age} = obj)
+ - default values
+ */
+// let arr = [1, 2, 3, 4, 5];
+// let obj = {name: 'amit', age: 24}
+// let {name:naam, age:umra} = obj;
+// console.log(naam, umra)
+
+// let [one, two, three, four, five] = arr; // arr de-structure
+// console.log(one, two, three, four, five);
+ 
+// Rest parameter
+/*
+ - allows a function to accept an undefinite number of arguments.
+ - only one rest param and placing the rest param in the last
+
+ */
+
+// Rest operator
+// function foo(p1, ...rest) {
+//   console.log(p1, rest)
+// }
+
+// foo(1, 2, 3, 4); //
+
+// Spread operator
+ /*
+ - spread out iterable elements where expected.
+ - difference between rest and spread
+ - use cases function arguments, array literals, object literals.
+ */
+
+// let arr = [1, 2, 3];
+// let newArr = [...arr];
+// console.log(newArr);
+
+// function foo(p1, p2, p3) {
+//   console.log(p1, p2, p3)
+// }
+
+// foo(...arr);
+
+// Classes
+ /*
+ - Classes are a template for creating objects
+ - use cases
+ */
+
+// factory func
+// constructor func
+
+// function MyConst(name, age) {
+//     this.name = name
+//     this.age = age;
+// }
+
+// class MyClass {
+//   constructor(name, age) {
+//     this.name = name
+//     this.age = age;
+//   }
+
+//   sayName() {
+//     console.log(this.name)
+//   }
+
+//   sayAge() {
+//     console.log(this.name)
+//   }
+// }
+
+// let obj1 = new MyClass('Amit', 24);
+// console.log(obj1)
+// obj1.sayName();
+
+
 </script>
